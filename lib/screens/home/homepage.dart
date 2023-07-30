@@ -1,4 +1,5 @@
-import 'package:events/widgets/button.dart';
+// import 'package:events/widgets/button.dart';
+import 'package:events/widgets/event_list.dart';
 import 'package:flutter/material.dart';
 import 'package:events/screens/home/bottom_nav.dart';
 
@@ -31,34 +32,61 @@ class _HomePageState extends State<HomePage> {
           )
         ],
       ),
-      body: Row(
+      body: ListView(
+        // shrinkWrap: true,
         children: [
-          // Button(
-          //     isIcon: true,
-          //     icon: Icons.favorite_border,
-          //     backgroundColor: const Color.fromARGB(255, 15, 85, 85),
-          //     borderColor: const Color.fromARGB(255, 4, 62, 62),
-          //     size: 50,
-          //     text: 'Movies',
-          //     textColor: Colors.white),
-
-          ElevatedButton(
-              style: ElevatedButton.styleFrom(backgroundColor: Colors.red),
-              onPressed: () {
-                setState(() {
-                  // buttonText = 'Text changed';
-                });
-              },
-              child: const Text('Movies')
-              // child: Text(buttonText),
+          // Row 1
+          Row(
+            children: [
+              ElevatedButton(
+                  style: ElevatedButton.styleFrom(backgroundColor: Colors.red),
+                  onPressed: () {
+                    setState(() {
+                      // buttonText = 'Text changed';
+                    });
+                  },
+                  child: const Text('Movies')
+                  // child: Text(buttonText),
+                  ),
+              ElevatedButton(
+                onPressed: () {},
+                child: const Text('Shows'),
               ),
-          ElevatedButton(
-            onPressed: () {},
-            child: const Text('Shows'),
+            ],
           ),
+          Row(
+            children: [
+              ElevatedButton(
+                  style: ElevatedButton.styleFrom(backgroundColor: Colors.red),
+                  onPressed: () {
+                    setState(() {
+                      // buttonText = 'Text changed';
+                    });
+                  },
+                  child: const Text('Movies')
+                  // child: Text(buttonText),
+                  ),
+              ElevatedButton(
+                onPressed: () {},
+                child: const Text('Shows'),
+              ),
+            ],
+          ),
+          const EventList()
         ],
       ),
-      bottomNavigationBar: BottomNav(),
+
+      // Add here the list of cards
+      bottomNavigationBar: const BottomNav(),
     );
   }
 }
+
+ // Button(
+            //     isIcon: true,
+            //     icon: Icons.favorite_border,
+            //     backgroundColor: const Color.fromARGB(255, 15, 85, 85),
+            //     borderColor: const Color.fromARGB(255, 4, 62, 62),
+            //     size: 50,
+            //     text: 'Movies',
+            //     textColor: Colors.white),
